@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import {faker} from '@faker-js/faker';
 
-const Cart = createContext();
+const CartContext = createContext();
 faker.seed(100);
 
 const Context = ({ children }) => {
@@ -17,14 +17,14 @@ const Context = ({ children }) => {
   const [products] = useState(productsArray);
 
   return (
-    <Cart.Provider value={{ cart, setCart, products }}>
+    <CartContext.Provider value={{ cart, setCart, products }}>
       {children}
-    </Cart.Provider>
+    </CartContext.Provider>
   );
 };
 
 export const CartState = () => {
-  return useContext(Cart);
+  return useContext(CartContext);
 };
 
 export default Context;

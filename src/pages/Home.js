@@ -1,4 +1,4 @@
-import { CartState } from "../Context";
+import { CartState } from "../CartContext";
 import SingleProduct from "../components/SingleProduct";
 
 const Home = () => {
